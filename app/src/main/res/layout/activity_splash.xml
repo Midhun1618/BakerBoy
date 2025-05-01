@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B A K E R B O Y"
+            android:text="@string/splash_title"
             android:textStyle="bold"
             android:fontFamily="@font/Cascadia"
             android:textSize="20sp"/>

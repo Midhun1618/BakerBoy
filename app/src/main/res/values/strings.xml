@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BakerBoy</string>
+    <string name="splash_title">B A K E R B O Y</string>
+    <string name="signup_text">Don\'t have an accout? Signup</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="phonenumber">Phone number</string>
 </resources>
