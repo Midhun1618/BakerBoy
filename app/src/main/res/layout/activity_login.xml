@@ -56,7 +56,6 @@
             android:text="@string/signup_text"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:textDecoration="underline"
             android:textColor="@color/white2"/>
 
 
