@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <ImageButton
@@ -18,12 +19,13 @@
             android:layout_margin="10dp"
             android:scaleType="fitXY"
             android:background="@color/blue1"
+            android:foreground="@drawable/profile_fg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/notificationButton"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="10dp"
@@ -33,6 +35,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/notificationCounter"
             android:visibility="visible"
             android:gravity="center"
             android:text="10"
@@ -42,8 +45,8 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:background="@drawable/roundedbg_pink"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="@+id/imageButton" />
+            app:layout_constraintEnd_toEndOf="@+id/notificationButton"
+            app:layout_constraintTop_toTopOf="@+id/notificationButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
