@@ -49,6 +49,179 @@
             app:layout_constraintTop_toTopOf="@+id/notificationButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/scrollContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BakerBoy's Special"
+                android:fontFamily="@font/Cascadia"
+                android:textStyle="bold"
+                android:shadowColor="@color/black"
+                android:shadowRadius="3"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"/>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="230dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_marginVertical="15dp"
+                        android:layout_width="412dp"
+                        android:layout_height="200dp"
+                        android:background="@color/blue1"
+                        android:outlineAmbientShadowColor="@color/black">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/pink1" />
+
+                        <TextView
+                            android:id="@+id/spl1_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Crave Wave"
+                            android:paddingStart="5dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/subtext_spl1"
+                            app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+                        <TextView
+                            android:id="@+id/subtext_spl1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Not just a cookie. Not just a pie."
+                            android:textSize="10sp"
+                            android:paddingStart="5dp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toTopOf="@+id/subtext2_spl1"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/subtext2_spl1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="It’s a choco-late decision you’ll never regret"
+                            android:textSize="10sp"
+                            android:paddingStart="5dp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/spl1_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Rs.99"
+                            android:padding="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:textFontWeight="10"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_marginVertical="15dp"
+                        android:layout_width="412dp"
+                        android:layout_height="200dp"
+                        android:background="@color/blue1"
+                        android:outlineAmbientShadowColor="@color/black">
+
+                        <ImageView
+                            android:id="@+id/splimg2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/pink1" />
+
+                        <TextView
+                            android:id="@+id/spl2_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Crave Wave"
+                            android:paddingStart="5dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/subtext_spl2"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/subtext_spl2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Not just a cookie. Not just a pie."
+                            android:textSize="10sp"
+                            android:paddingStart="5dp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toTopOf="@+id/subtext2_spl2"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/subtext2_spl2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="It’s a choco-late decision you’ll never regret"
+                            android:textSize="10sp"
+                            android:paddingStart="5dp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Rs.99"
+                            android:padding="5dp"
+                            android:textFontWeight="10"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+                        <TextView
+                            android:id="@+id/spl2_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/Cascadia"
+                            android:text="Rs.99"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:textFontWeight="10"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
