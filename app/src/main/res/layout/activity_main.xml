@@ -7,11 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/white"
         android:orientation="vertical">
+
+
 
         <ImageButton
             android:layout_width="45dp"
@@ -49,6 +52,18 @@
             app:layout_constraintTop_toTopOf="@+id/notificationButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/roundedbg_pink"
+            android:foreground="@drawable/baseline_shopping_bag_24"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -222,6 +237,7 @@
 
         </LinearLayout>
     </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

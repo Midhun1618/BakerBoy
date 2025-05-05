@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/splash_title"
             android:textStyle="bold"
-            android:fontFamily="@font/cascadia"
+            android:fontFamily="@font/Cascadia"
             android:textSize="20sp"/>
 
     </LinearLayout>
