@@ -248,7 +248,7 @@
                 android:layout_gravity="center"
                 android:rowCount="3">
                 <androidx.cardview.widget.CardView
-                    android:id="@id/muffin"
+                    android:id="@+id/muffin"
                     android:layout_height="wrap_content"
                     android:layout_width="160dp"
                     app:cardCornerRadius="10dp"
@@ -278,7 +278,7 @@
                             android:layout_margin="10dp">
 
                             <TextView
-                                android:id="@+id/name1"
+                                android:id="@+id/name01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -290,7 +290,7 @@
                                 tools:ignore="MissingConstraints" />
 
                             <TextView
-                                android:id="@+id/value"
+                                android:id="@+id/value01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -352,7 +352,7 @@
                                 android:layout_margin="10dp">
 
                                 <TextView
-                                    android:id="@+id/name2"
+                                    android:id="@+id/name02"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -364,7 +364,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value02"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -377,7 +377,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item02Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -426,7 +426,7 @@
                             android:layout_margin="10dp">
 
                             <TextView
-                                android:id="@+id/name3"
+                                android:id="@+id/name03"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -438,7 +438,7 @@
                                 tools:ignore="MissingConstraints" />
 
                             <TextView
-                                android:id="@+id/value"
+                                android:id="@+id/value03"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -451,7 +451,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
                     <TextView
-                        android:id="@+id/item01Counter"
+                        android:id="@+id/item03Counter"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="right"
@@ -498,7 +498,7 @@
                             android:layout_margin="10dp">
 
                             <TextView
-                                android:id="@+id/name4"
+                                android:id="@+id/name04"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -510,7 +510,7 @@
                                 tools:ignore="MissingConstraints" />
 
                             <TextView
-                                android:id="@+id/value"
+                                android:id="@+id/value04"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -523,7 +523,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
                     <TextView
-                        android:id="@+id/item01Counter"
+                        android:id="@+id/item04Counter"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="right"
@@ -569,7 +569,7 @@
                                 android:layout_margin="10dp">
 
                                 <TextView
-                                    android:id="@+id/name5"
+                                    android:id="@+id/name05"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -581,7 +581,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value05"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -594,7 +594,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item05Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -640,7 +640,7 @@
                                 android:layout_margin="10dp">
 
                                 <TextView
-                                    android:id="@+id/name6"
+                                    android:id="@+id/name06"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -652,7 +652,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value06"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -665,7 +665,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item06Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -714,7 +714,7 @@
                                 android:layout_margin="10dp">
 
                                 <TextView
-                                    android:id="@+id/name7"
+                                    android:id="@+id/name07"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -726,7 +726,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value07"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -739,7 +739,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item07Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -788,7 +788,7 @@
                                 android:layout_margin="10dp">
 
                                 <TextView
-                                    android:id="@+id/name8"
+                                    android:id="@+id/name08"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -800,7 +800,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value08"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -813,7 +813,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item08Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -859,7 +859,7 @@
                                 android:layout_margin="10dp">
 
                                 <TextView
-                                    android:id="@+id/name9"
+                                    android:id="@+id/name09"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -871,7 +871,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value09"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -884,7 +884,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item09Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -944,7 +944,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value10"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -957,7 +957,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item10Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
@@ -1017,7 +1017,7 @@
                                     tools:ignore="MissingConstraints" />
 
                                 <TextView
-                                    android:id="@+id/value"
+                                    android:id="@+id/value11"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
@@ -1030,7 +1030,7 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/item01Counter"
+                            android:id="@+id/item11Counter"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="right"
