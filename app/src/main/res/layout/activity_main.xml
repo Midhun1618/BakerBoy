@@ -271,7 +271,7 @@
                             android:layout_height="130dp"
                             android:layout_marginTop="15dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/muffinexample"/>
+                            android:src="@drawable/muffinsimg"/>
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -345,7 +345,7 @@
                                 android:layout_height="130dp"
                                 android:layout_marginTop="15dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/muffinexample"/>
+                                android:src="@drawable/cupcakeimg"/>
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -419,7 +419,7 @@
                             android:layout_height="130dp"
                             android:layout_marginTop="15dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/muffinexample"/>
+                            android:src="@drawable/donutimg"/>
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -491,7 +491,7 @@
                             android:layout_height="130dp"
                             android:layout_marginTop="15dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/muffinexample"/>
+                            android:src="@drawable/macaronsimg"/>
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -633,7 +633,7 @@
                                 android:layout_height="130dp"
                                 android:layout_marginTop="15dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/muffinexample"/>
+                                android:src="@drawable/cinnamonrollimg"/>
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -707,7 +707,7 @@
                                 android:layout_height="130dp"
                                 android:layout_marginTop="15dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/muffinexample"/>
+                                android:src="@drawable/pastryimg"/>
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -852,7 +852,7 @@
                                 android:layout_height="130dp"
                                 android:layout_marginTop="15dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/muffinexample"/>
+                                android:src="@drawable/blueberrycheesecakeimg"/>
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -864,7 +864,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
                                     android:layout_marginLeft="7dp"
-                                    android:text="Honey Bun"
+                                    android:text="Cheese cake"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
@@ -912,9 +912,6 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
-
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -985,9 +982,6 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
-
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1059,10 +1053,6 @@
 
 
             </GridLayout>
-
-
-
-
         </LinearLayout>
     </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
