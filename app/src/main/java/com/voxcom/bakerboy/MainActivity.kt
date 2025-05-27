@@ -2,6 +2,7 @@ package com.voxcom.bakerboy
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -83,12 +84,19 @@ class MainActivity : AppCompatActivity() {
         redvelvetCounter.text = data.getInt("redvelvet",0).toString()
         cheesecakeCounter.text = data.getInt("cheesecake",0).toString()
 
-
-
-
-
-
-
+        muffin.setOnClickListener {
+            var count = data.getInt("muffin",0)
+            if(count==0){
+                edit.putInt("muffin",count+1)
+                muffinCounter.visibility=View.VISIBLE
+            }
+            else{
+                edit.putInt("muffin",0)
+                muffinCounter.visibility=View.INVISIBLE
+            }
+            edit.apply()
+            count = data.getInt("muffin",0)
+            muffinCounter.text = count.toString()
         }
     }
 
