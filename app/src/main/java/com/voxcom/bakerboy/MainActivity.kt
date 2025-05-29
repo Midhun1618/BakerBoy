@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val abc ="abc"
         val data = getSharedPreferences("live_data", MODE_PRIVATE)
         val edit = data.edit()
         edit.putInt("muffin",0)
