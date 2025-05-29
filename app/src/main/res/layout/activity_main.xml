@@ -264,6 +264,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="7dp"
                         android:clickable="true"
+                        android:backgroundTint="@color/white"
                         app:cardCornerRadius="10dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout

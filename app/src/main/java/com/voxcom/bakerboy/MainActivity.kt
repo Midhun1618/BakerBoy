@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var pastryCounter: TextView
     lateinit var redvelvetCounter: TextView
     lateinit var cheesecakeCounter: TextView
+    lateinit var cartCounter: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         pastryCounter = findViewById(R.id.item07Counter)
         redvelvetCounter = findViewById(R.id.item08Counter)
         cheesecakeCounter = findViewById(R.id.item09Counter)
+        cartCounter = findViewById(R.id.cartCounter)
 
         muffinCounter.text = data.getInt("muffin",0).toString()
         cupcakeCounter.text = data.getInt("cupcake",0).toString()
@@ -83,16 +85,23 @@ class MainActivity : AppCompatActivity() {
         pastryCounter.text = data.getInt("pastry",0).toString()
         redvelvetCounter.text = data.getInt("redvelvet",0).toString()
         cheesecakeCounter.text = data.getInt("cheesecake",0).toString()
+        cartCounter.text = data.getInt("cart",0).toString()
+
 
         muffin.setOnClickListener {
             var count = data.getInt("muffin",0)
+            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("muffin",count+1)
+                edit.putInt("cart",cartcount+1)
+                cartCounter.visibility=View.VISIBLE
                 muffinCounter.visibility=View.VISIBLE
+                muffin.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
             else{
                 edit.putInt("muffin",0)
                 muffinCounter.visibility=View.INVISIBLE
+                muffin.setBackgroundTintList(getColorStateList(R.color.white))
             }
             edit.apply()
             count = data.getInt("muffin",0)
