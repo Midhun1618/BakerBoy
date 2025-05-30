@@ -126,6 +126,44 @@ class MainActivity : AppCompatActivity() {
             count = data.getInt("cupcake",0)
             cupcakeCounter.text = count.toString()
         }
+        cupcake.setOnClickListener {
+            var count = data.getInt("cupcake",0)
+            var cartcount = data.getInt("cart",0)
+            if(count==0){
+                edit.putInt("cupcake",count+1)
+                edit.putInt("cart",cartcount+1)
+                cartCounter.visibility=View.VISIBLE
+                cupcakeCounter.visibility=View.VISIBLE
+                cupcake.setBackgroundTintList(getColorStateList(R.color.blue1))
+            }
+            else{
+                edit.putInt("cupcake",0)
+                cupcakeCounter.visibility=View.INVISIBLE
+                cupcake.setBackgroundTintList(getColorStateList(R.color.white))
+            }
+            edit.apply()
+            count = data.getInt("cupcake",0)
+            cupcakeCounter.text = count.toString()
+        }
+        cinnamonroll.setOnClickListener {
+            var count = data.getInt("cinnamonroll",0)
+            var cartcount = data.getInt("cart",0)
+            if(count==0){
+                edit.putInt("cinnamonroll",count+1)
+                edit.putInt("cart",cartcount+1)
+                cartCounter.visibility=View.VISIBLE
+                cinnamonrollCounter.visibility=View.VISIBLE
+                cinnamonroll.setBackgroundTintList(getColorStateList(R.color.blue1))
+            }
+            else{
+                edit.putInt("cinnamonroll",0)
+                cinnamonrollCounter.visibility=View.INVISIBLE
+                cinnamonroll.setBackgroundTintList(getColorStateList(R.color.white))
+            }
+            edit.apply()
+            count = data.getInt("cinnamonroll",0)
+            cinnamonrollCounter.text = count.toString()
+        }
     }
 
 }
