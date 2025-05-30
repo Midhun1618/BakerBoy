@@ -107,6 +107,25 @@ class MainActivity : AppCompatActivity() {
             count = data.getInt("muffin",0)
             muffinCounter.text = count.toString()
         }
+        cupcake.setOnClickListener {
+            var count = data.getInt("cupcake",0)
+            var cartcount = data.getInt("cart",0)
+            if(count==0){
+                edit.putInt("cupcake",count+1)
+                edit.putInt("cart",cartcount+1)
+                cartCounter.visibility=View.VISIBLE
+                cupcakeCounter.visibility=View.VISIBLE
+                cupcake.setBackgroundTintList(getColorStateList(R.color.blue1))
+            }
+            else{
+                edit.putInt("cupcake",0)
+                cupcakeCounter.visibility=View.INVISIBLE
+                cupcake.setBackgroundTintList(getColorStateList(R.color.white))
+            }
+            edit.apply()
+            count = data.getInt("cupcake",0)
+            cupcakeCounter.text = count.toString()
+        }
     }
 
 }
