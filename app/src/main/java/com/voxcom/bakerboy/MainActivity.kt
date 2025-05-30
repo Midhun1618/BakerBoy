@@ -185,23 +185,23 @@ class MainActivity : AppCompatActivity() {
             cupcakeCounter.text = count.toString()
         }
         macaron.setOnClickListener {
-            var count = data.getInt("donut",0)
+            var count = data.getInt("macaron",0)
             var cartcount = data.getInt("cart",0)
             if(count==0){
-                edit.putInt("donut",count+1)
+                edit.putInt("macaron",count+1)
                 edit.putInt("cart",cartcount+1)
                 cartCounter.visibility=View.VISIBLE
-                donutCounter.visibility=View.VISIBLE
-                donut.setBackgroundTintList(getColorStateList(R.color.blue1))
+                macaronCounter.visibility=View.VISIBLE
+                macaron.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
             else{
-                edit.putInt("donut",0)
-                donutCounter.visibility=View.INVISIBLE
-                donut.setBackgroundTintList(getColorStateList(R.color.white))
+                edit.putInt("macaron",0)
+                macaronCounter.visibility=View.INVISIBLE
+                macaron.setBackgroundTintList(getColorStateList(R.color.white))
             }
             edit.apply()
-            count = data.getInt("donut",0)
-            donutCounter.text = count.toString()
+            count = data.getInt("macaron",0)
+            macaronCounter.text = count.toString()
         }
         pastry.setOnClickListener {
             var count = data.getInt("pastry",0)
