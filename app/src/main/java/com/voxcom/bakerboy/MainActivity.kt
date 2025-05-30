@@ -223,22 +223,22 @@ class MainActivity : AppCompatActivity() {
             pastryCounter.text = count.toString()
         }
         redvelvet.setOnClickListener {
-            var count = data.getInt("muffin",0)
+            var count = data.getInt("redvelvet",0)
             var cartcount = data.getInt("cart",0)
             if(count==0){
-                edit.putInt("muffin",count+1)
+                edit.putInt("redvelvet",count+1)
                 edit.putInt("cart",cartcount+1)
                 cartCounter.visibility=View.VISIBLE
                 redvelvetCounter.visibility=View.VISIBLE
                 redvelvet.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
             else{
-                edit.putInt("muffin",0)
+                edit.putInt("redvelvet",0)
                 redvelvetCounter.visibility=View.INVISIBLE
                 redvelvet.setBackgroundTintList(getColorStateList(R.color.white))
             }
             edit.apply()
-            count = data.getInt("muffin",0)
+            count = data.getInt("redvelvet",0)
             redvelvetCounter.text = count.toString()
         }
     }
