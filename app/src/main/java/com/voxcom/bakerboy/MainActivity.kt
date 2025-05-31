@@ -106,6 +106,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("muffin",0)
             muffinCounter.text = count.toString()
+            cartCheck()
         }
         cupcake.setOnClickListener {
             var count = data.getInt("cupcake",0)
@@ -125,6 +126,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("cupcake",0)
             cupcakeCounter.text = count.toString()
+            cartCheck()
         }
         donut.setOnClickListener {
             var count = data.getInt("donut",0)
@@ -144,6 +146,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("donut",0)
             donutCounter.text = count.toString()
+            cartCheck()
         }
         cinnamonroll.setOnClickListener {
             var count = data.getInt("cinnamonroll",0)
@@ -163,6 +166,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("cinnamonroll",0)
             cinnamonrollCounter.text = count.toString()
+            cartCheck()
         }
 
         bananabread.setOnClickListener {
@@ -183,6 +187,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("bananabread",0)
             bananabreadCounter.text = count.toString()
+            cartCheck()
         }
         macaron.setOnClickListener {
             var count = data.getInt("macaron",0)
@@ -202,6 +207,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("macaron",0)
             macaronCounter.text = count.toString()
+            cartCheck()
         }
         pastry.setOnClickListener {
             var count = data.getInt("pastry",0)
@@ -221,6 +227,7 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("pastry",0)
             pastryCounter.text = count.toString()
+            cartCheck()
         }
         redvelvet.setOnClickListener {
             var count = data.getInt("redvelvet",0)
@@ -240,7 +247,21 @@ class MainActivity : AppCompatActivity() {
             edit.apply()
             count = data.getInt("redvelvet",0)
             redvelvetCounter.text = count.toString()
+            cartCheck()
         }
     }
+
+    private fun cartCheck() {
+        val data = getSharedPreferences("live_data", MODE_PRIVATE)
+        val count = data.getInt("cart",0)
+        if(count==0){
+            cartCounter.visibility=View.INVISIBLE
+        }
+        else{
+            cartCounter.visibility=View.VISIBLE
+            cartCounter.text = count.toString()
+        }
+    }
+
 
 }
