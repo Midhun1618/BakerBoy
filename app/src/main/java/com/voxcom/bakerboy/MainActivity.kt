@@ -90,11 +90,8 @@ class MainActivity : AppCompatActivity() {
 
         muffin.setOnClickListener {
             var count = data.getInt("muffin",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("muffin",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 muffinCounter.visibility=View.VISIBLE
                 muffin.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -110,11 +107,8 @@ class MainActivity : AppCompatActivity() {
         }
         cupcake.setOnClickListener {
             var count = data.getInt("cupcake",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("cupcake",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 cupcakeCounter.visibility=View.VISIBLE
                 cupcake.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -130,11 +124,8 @@ class MainActivity : AppCompatActivity() {
         }
         donut.setOnClickListener {
             var count = data.getInt("donut",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("donut",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 donutCounter.visibility=View.VISIBLE
                 donut.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -150,11 +141,8 @@ class MainActivity : AppCompatActivity() {
         }
         cinnamonroll.setOnClickListener {
             var count = data.getInt("cinnamonroll",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("cinnamonroll",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 cinnamonrollCounter.visibility=View.VISIBLE
                 cinnamonroll.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -171,11 +159,8 @@ class MainActivity : AppCompatActivity() {
 
         bananabread.setOnClickListener {
             var count = data.getInt("bananabread",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("bananabread",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 bananabreadCounter.visibility=View.VISIBLE
                 bananabread.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -191,11 +176,8 @@ class MainActivity : AppCompatActivity() {
         }
         macaron.setOnClickListener {
             var count = data.getInt("macaron",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("macaron",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 macaronCounter.visibility=View.VISIBLE
                 macaron.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -211,11 +193,8 @@ class MainActivity : AppCompatActivity() {
         }
         pastry.setOnClickListener {
             var count = data.getInt("pastry",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("pastry",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 pastryCounter.visibility=View.VISIBLE
                 pastry.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
@@ -231,11 +210,8 @@ class MainActivity : AppCompatActivity() {
         }
         redvelvet.setOnClickListener {
             var count = data.getInt("redvelvet",0)
-            var cartcount = data.getInt("cart",0)
             if(count==0){
                 edit.putInt("redvelvet",count+1)
-                edit.putInt("cart",cartcount+1)
-                cartCounter.visibility=View.VISIBLE
                 redvelvetCounter.visibility=View.VISIBLE
                 redvelvet.setBackgroundTintList(getColorStateList(R.color.blue1))
             }
