@@ -225,11 +225,37 @@ class MainActivity : AppCompatActivity() {
             redvelvetCounter.text = count.toString()
             cartCheck()
         }
+        cheesecake.setOnClickListener {
+            var count = data.getInt("cheesecake",0)
+            if(count==0){
+                edit.putInt("cheesecake",count+1)
+                cheesecakeCounter.visibility=View.VISIBLE
+                cheesecake.setBackgroundTintList(getColorStateList(R.color.blue1))
+            }
+            else{
+                edit.putInt("cheesecake",0)
+                cheesecakeCounter.visibility=View.INVISIBLE
+                cheesecake.setBackgroundTintList(getColorStateList(R.color.white))
+            }
+            edit.apply()
+            count = data.getInt("cheesecake",0)
+            cheesecakeCounter.text = count.toString()
+            cartCheck()
+        }
     }
 
     private fun cartCheck() {
         val data = getSharedPreferences("live_data", MODE_PRIVATE)
         val count = data.getInt("cart",0)
+        val i1 = data.getInt("muffin",0)
+        val i2 = data.getInt("cupcake",0)
+        val i3 = data.getInt("donut",0)
+        val i4 = data.getInt("cinnamonroll",0)
+        val i5 = data.getInt("bananabread",0)
+        val i6 = data.getInt("macaron",0)
+        val i7 = data.getInt("pastry",0)
+        val i8 = data.getInt("redvelvet",0)
+
         if(count==0){
             cartCounter.visibility=View.INVISIBLE
         }
