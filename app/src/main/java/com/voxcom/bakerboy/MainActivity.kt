@@ -246,7 +246,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun cartCheck() {
         val data = getSharedPreferences("live_data", MODE_PRIVATE)
-        val count = data.getInt("cart",0)
+
         val i1 = data.getInt("muffin",0)
         val i2 = data.getInt("cupcake",0)
         val i3 = data.getInt("donut",0)
@@ -255,6 +255,12 @@ class MainActivity : AppCompatActivity() {
         val i6 = data.getInt("macaron",0)
         val i7 = data.getInt("pastry",0)
         val i8 = data.getInt("redvelvet",0)
+
+        val edit = data.edit()
+
+        edit.putInt("cart",i1+i2+i3+i4+i5+i6+i7+i8)
+
+        val count = data.getInt("cart",0)
 
         if(count==0){
             cartCounter.visibility=View.INVISIBLE
