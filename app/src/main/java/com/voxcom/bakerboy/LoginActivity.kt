@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
                 if (ph == "123" && pass == "456") {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
             }
         }
