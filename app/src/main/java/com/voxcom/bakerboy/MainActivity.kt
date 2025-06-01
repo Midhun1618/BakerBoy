@@ -269,6 +269,9 @@ class MainActivity : AppCompatActivity() {
             cartCounter.visibility=View.VISIBLE
             cartCounter.text = count.toString()
         }
+        edit.apply()
+        cartCounter.text = count.toString()
+        cartCheck()
     }
 
 
