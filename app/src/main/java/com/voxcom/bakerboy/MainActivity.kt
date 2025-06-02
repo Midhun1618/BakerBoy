@@ -1,5 +1,6 @@
 package com.voxcom.bakerboy
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
@@ -93,7 +94,8 @@ class MainActivity : AppCompatActivity() {
         cart = findViewById(R.id.cart_button)
 
         cart.setOnClickListener {
-
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
         }
 
 
