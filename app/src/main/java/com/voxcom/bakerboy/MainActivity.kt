@@ -100,10 +100,11 @@ class MainActivity : AppCompatActivity() {
                 muffinCounter.visibility=View.INVISIBLE
                 muffin.setBackgroundTintList(getColorStateList(R.color.white))
             }
+            cartCheck()
             edit.apply()
             count = data.getInt("muffin",0)
             muffinCounter.text = count.toString()
-            cartCheck()
+
         }
         cupcake.setOnClickListener {
             var count = data.getInt("cupcake",0)
@@ -271,7 +272,6 @@ class MainActivity : AppCompatActivity() {
         }
         edit.apply()
         cartCounter.text = count.toString()
-        cartCheck()
     }
 
 
