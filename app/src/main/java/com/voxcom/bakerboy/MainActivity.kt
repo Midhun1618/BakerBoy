@@ -3,6 +3,7 @@ package com.voxcom.bakerboy
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var redvelvetCounter: TextView
     lateinit var cheesecakeCounter: TextView
     lateinit var cartCounter: TextView
+
+    lateinit var cart : ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,6 +89,12 @@ class MainActivity : AppCompatActivity() {
         redvelvetCounter.text = data.getInt("redvelvet",0).toString()
         cheesecakeCounter.text = data.getInt("cheesecake",0).toString()
         cartCounter.text = data.getInt("cart",0).toString()
+
+        cart = findViewById(R.id.cart_button)
+
+        cart.setOnClickListener {
+
+        }
 
 
         muffin.setOnClickListener {
