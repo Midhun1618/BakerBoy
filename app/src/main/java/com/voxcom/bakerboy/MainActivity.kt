@@ -11,7 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.io.Serializable
 
+data class ItemData(
+    val name: String,
+    val count: Int
+) : Serializable
 data class BakeryItem(
     val name: String,
     val cardView: CardView,
@@ -19,11 +24,16 @@ data class BakeryItem(
 )
 
 
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var cartCounter: TextView
     private lateinit var cartButton: ImageButton
     private val items = mutableListOf<BakeryItem>()
+
+    val itemKeys = listOf( "muffin", "cupcake", "donut", "cinnamonroll","bananabread", "macaron", "pastry", "redvelvet", "cheesecake")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +55,17 @@ class MainActivity : AppCompatActivity() {
         counterClickListeners()
 
         cartButton.setOnClickListener {
-            startActivity(Intent(this, CartActivity::class.java))
+            val data = getSharedPreferences("live_data", MODE_PRIVATE)
+            val selectedItems = itemKeys.mapNotNull { key ->
+                val count = data.getInt(key, 0)
+                if (count > 0) ItemData(key, count) else null
+            }
+
+            val intent = Intent(this, CartActivity::class.java)
+            intent.putExtra("selectedItems", ArrayList(selectedItems))
+            startActivity(intent)
         }
+
     }
 
     private fun setupItems() {
