@@ -84,8 +84,8 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/cascadia"
                     android:paddingStart="15dp"
-                    android:shadowColor="@color/black"
-                    android:shadowRadius="3"
+                    android:textFontWeight="800"
+                    android:textColor="@color/blue3"
                     android:text="BakerBoy's Special"
                     android:textStyle="bold" />
 

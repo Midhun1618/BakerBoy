@@ -12,30 +12,18 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+data class BakeryItem(
+    val name: String,
+    val cardView: CardView,
+    val counterView: TextView
+)
+
+
 class MainActivity : AppCompatActivity() {
-    lateinit var muffin: CardView
-    lateinit var cupcake: CardView
-    lateinit var donut: CardView
-    lateinit var macaron: CardView
-    lateinit var bananabread: CardView
-    lateinit var cinnamonroll: CardView
-    lateinit var pastry: CardView
-    lateinit var redvelvet: CardView
-    lateinit var cheesecake: CardView
-
-    lateinit var muffinCounter: TextView
-    lateinit var cupcakeCounter: TextView
-    lateinit var donutCounter: TextView
-    lateinit var macaronCounter: TextView
-    lateinit var bananabreadCounter: TextView
-    lateinit var cinnamonrollCounter: TextView
-    lateinit var pastryCounter: TextView
-    lateinit var redvelvetCounter: TextView
-    lateinit var cheesecakeCounter: TextView
-    lateinit var cartCounter: TextView
-
-    lateinit var cart : ImageButton
-
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var cartCounter: TextView
+    private lateinit var cartButton: ImageButton
+    private val items = mutableListOf<BakeryItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,244 +34,97 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val data = getSharedPreferences("live_data", MODE_PRIVATE)
-        val edit = data.edit()
-        edit.putInt("muffin",0)
-        edit.putInt("cupcake",0)
-        edit.putInt("donut",0)
-        edit.putInt("cinnamonroll",0)
-        edit.putInt("bananabread",0)
-        edit.putInt("macaron",0)
-        edit.putInt("pastry",0)
-        edit.putInt("redvelvet",0)
-        edit.putInt("cheesecake",0)
-        edit.apply()
 
-        muffin = findViewById(R.id.muffin)
-        cupcake = findViewById(R.id.cupcake)
-        donut = findViewById(R.id.donut)
-        cinnamonroll = findViewById(R.id.cinnamonroll)
-        bananabread = findViewById(R.id.bananabread)
-        macaron = findViewById(R.id.macaron)
-        pastry = findViewById(R.id.pastry)
-        redvelvet = findViewById(R.id.redvelvet)
-        cheesecake = findViewById(R.id.cheesecake)
-
-        muffinCounter = findViewById(R.id.item01Counter)
-        cupcakeCounter = findViewById(R.id.item02Counter)
-        donutCounter = findViewById(R.id.item03Counter)
-        cinnamonrollCounter = findViewById(R.id.item06Counter)
-        bananabreadCounter = findViewById(R.id.item05Counter)
-        macaronCounter = findViewById(R.id.item04Counter)
-        pastryCounter = findViewById(R.id.item07Counter)
-        redvelvetCounter = findViewById(R.id.item08Counter)
-        cheesecakeCounter = findViewById(R.id.item09Counter)
+        sharedPreferences = getSharedPreferences("live_data", MODE_PRIVATE)
         cartCounter = findViewById(R.id.cartCounter)
+        cartButton = findViewById(R.id.cart_button)
 
-        muffinCounter.text = data.getInt("muffin",0).toString()
-        cupcakeCounter.text = data.getInt("cupcake",0).toString()
-        donutCounter.text = data.getInt("donut",0).toString()
-        cinnamonrollCounter.text = data.getInt("cinnamonroll",0).toString()
-        bananabreadCounter.text = data.getInt("bananabread",0).toString()
-        macaronCounter.text = data.getInt("macaron",0).toString()
-        pastryCounter.text = data.getInt("pastry",0).toString()
-        redvelvetCounter.text = data.getInt("redvelvet",0).toString()
-        cheesecakeCounter.text = data.getInt("cheesecake",0).toString()
-        cartCounter.text = data.getInt("cart",0).toString()
+        setupItems()
+        updateAllCounters()
+        setupClickListeners()
+        counterClickListeners()
 
-        cart = findViewById(R.id.cart_button)
-
-        cart.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        muffin.setOnClickListener {
-            var count = data.getInt("muffin",0)
-            if(count==0){
-                edit.putInt("muffin",count+1)
-                muffinCounter.visibility=View.VISIBLE
-                muffin.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("muffin",0)
-                muffinCounter.visibility=View.INVISIBLE
-                muffin.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            cartCheck()
-            edit.apply()
-            count = data.getInt("muffin",0)
-            muffinCounter.text = count.toString()
-
-        }
-        cupcake.setOnClickListener {
-            var count = data.getInt("cupcake",0)
-            if(count==0){
-                edit.putInt("cupcake",count+1)
-                cupcakeCounter.visibility=View.VISIBLE
-                cupcake.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("cupcake",0)
-                cupcakeCounter.visibility=View.INVISIBLE
-                cupcake.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("cupcake",0)
-            cupcakeCounter.text = count.toString()
-            cartCheck()
-        }
-        donut.setOnClickListener {
-            var count = data.getInt("donut",0)
-            if(count==0){
-                edit.putInt("donut",count+1)
-                donutCounter.visibility=View.VISIBLE
-                donut.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("donut",0)
-                donutCounter.visibility=View.INVISIBLE
-                donut.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("donut",0)
-            donutCounter.text = count.toString()
-            cartCheck()
-        }
-        cinnamonroll.setOnClickListener {
-            var count = data.getInt("cinnamonroll",0)
-            if(count==0){
-                edit.putInt("cinnamonroll",count+1)
-                cinnamonrollCounter.visibility=View.VISIBLE
-                cinnamonroll.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("cinnamonroll",0)
-                cinnamonrollCounter.visibility=View.INVISIBLE
-                cinnamonroll.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("cinnamonroll",0)
-            cinnamonrollCounter.text = count.toString()
-            cartCheck()
-        }
-
-        bananabread.setOnClickListener {
-            var count = data.getInt("bananabread",0)
-            if(count==0){
-                edit.putInt("bananabread",count+1)
-                bananabreadCounter.visibility=View.VISIBLE
-                bananabread.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("bananabread",0)
-                bananabreadCounter.visibility=View.INVISIBLE
-                bananabread.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("bananabread",0)
-            bananabreadCounter.text = count.toString()
-            cartCheck()
-        }
-        macaron.setOnClickListener {
-            var count = data.getInt("macaron",0)
-            if(count==0){
-                edit.putInt("macaron",count+1)
-                macaronCounter.visibility=View.VISIBLE
-                macaron.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("macaron",0)
-                macaronCounter.visibility=View.INVISIBLE
-                macaron.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("macaron",0)
-            macaronCounter.text = count.toString()
-            cartCheck()
-        }
-        pastry.setOnClickListener {
-            var count = data.getInt("pastry",0)
-            if(count==0){
-                edit.putInt("pastry",count+1)
-                pastryCounter.visibility=View.VISIBLE
-                pastry.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("pastry",0)
-                pastryCounter.visibility=View.INVISIBLE
-                pastry.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("pastry",0)
-            pastryCounter.text = count.toString()
-            cartCheck()
-        }
-        redvelvet.setOnClickListener {
-            var count = data.getInt("redvelvet",0)
-            if(count==0){
-                edit.putInt("redvelvet",count+1)
-                redvelvetCounter.visibility=View.VISIBLE
-                redvelvet.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("redvelvet",0)
-                redvelvetCounter.visibility=View.INVISIBLE
-                redvelvet.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("redvelvet",0)
-            redvelvetCounter.text = count.toString()
-            cartCheck()
-        }
-        cheesecake.setOnClickListener {
-            var count = data.getInt("cheesecake",0)
-            if(count==0){
-                edit.putInt("cheesecake",count+1)
-                cheesecakeCounter.visibility=View.VISIBLE
-                cheesecake.setBackgroundTintList(getColorStateList(R.color.blue1))
-            }
-            else{
-                edit.putInt("cheesecake",0)
-                cheesecakeCounter.visibility=View.INVISIBLE
-                cheesecake.setBackgroundTintList(getColorStateList(R.color.white))
-            }
-            edit.apply()
-            count = data.getInt("cheesecake",0)
-            cheesecakeCounter.text = count.toString()
-            cartCheck()
+        cartButton.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
         }
     }
 
-    private fun cartCheck() {
-        val data = getSharedPreferences("live_data", MODE_PRIVATE)
+    private fun setupItems() {
+        val itemIds = listOf(
+            Triple("muffin", R.id.muffin, R.id.item01Counter),
+            Triple("cupcake", R.id.cupcake, R.id.item02Counter),
+            Triple("donut", R.id.donut, R.id.item03Counter),
+            Triple("macaron", R.id.macaron, R.id.item04Counter),
+            Triple("bananabread", R.id.bananabread, R.id.item05Counter),
+            Triple("cinnamonroll", R.id.cinnamonroll, R.id.item06Counter),
+            Triple("pastry", R.id.pastry, R.id.item07Counter),
+            Triple("redvelvet", R.id.redvelvet, R.id.item08Counter),
+            Triple("cheesecake", R.id.cheesecake, R.id.item09Counter)
+        )
 
-        val i1 = data.getInt("muffin",0)
-        val i2 = data.getInt("cupcake",0)
-        val i3 = data.getInt("donut",0)
-        val i4 = data.getInt("cinnamonroll",0)
-        val i5 = data.getInt("bananabread",0)
-        val i6 = data.getInt("macaron",0)
-        val i7 = data.getInt("pastry",0)
-        val i8 = data.getInt("redvelvet",0)
-
-        val edit = data.edit()
-
-        edit.putInt("cart",i1+i2+i3+i4+i5+i6+i7+i8)
-
-        val count = data.getInt("cart",0)
-
-        if(count==0){
-            cartCounter.visibility=View.INVISIBLE
+        itemIds.forEach { (name, cardId, counterId) ->
+            val card = findViewById<CardView>(cardId)
+            val counter = findViewById<TextView>(counterId)
+            items.add(BakeryItem(name, card, counter))
         }
-        else{
-            cartCounter.visibility=View.VISIBLE
-            cartCounter.text = count.toString()
-        }
-        edit.apply()
-        cartCounter.text = count.toString()
     }
 
+    private fun setupClickListeners() {
+        items.forEach { item ->
+            item.cardView.setOnClickListener {
+                toggleItem(item)
+            }
+        }
+    }
+    private fun counterClickListeners() {
+        items.forEach { item ->
+            item.counterView.setOnClickListener {
+                countUp(item)
+            }
+        }
+    }
+    private fun countUp(item: BakeryItem) {
+        val currentCount = sharedPreferences.getInt(item.name, 0)
+        val newCount = currentCount+1
 
+        sharedPreferences.edit().putInt(item.name, newCount).apply()
+
+        item.counterView.text = newCount.toString()
+
+        updateCartCounter()
+    }
+
+    private fun toggleItem(item: BakeryItem) {
+        val currentCount = sharedPreferences.getInt(item.name, 0)
+        val newCount = if (currentCount == 0) 1 else 0
+
+        sharedPreferences.edit().putInt(item.name, newCount).apply()
+
+        item.counterView.visibility = if (newCount == 0) View.INVISIBLE else View.VISIBLE
+        item.cardView.setBackgroundTintList(getColorStateList(
+            if (newCount == 0) R.color.white else R.color.blue1
+        ))
+        item.counterView.text = newCount.toString()
+
+        updateCartCounter()
+    }
+
+    private fun updateAllCounters() {
+        items.forEach { item ->
+            val count = sharedPreferences.getInt(item.name, 0)
+            item.counterView.visibility = if (count == 0) View.INVISIBLE else View.VISIBLE
+            item.counterView.text = count.toString()
+            item.cardView.setBackgroundTintList(getColorStateList(
+                if (count == 0) R.color.white else R.color.blue1
+            ))
+        }
+        updateCartCounter()
+    }
+
+    private fun updateCartCounter() {
+        val total = items.sumOf { sharedPreferences.getInt(it.name, 0) }
+        sharedPreferences.edit().putInt("cart", total).apply()
+        cartCounter.text = total.toString()
+        cartCounter.visibility = if (total == 0) View.INVISIBLE else View.VISIBLE
+    }
 }
