@@ -37,11 +37,11 @@
             android:text="₹0"
             android:textSize="25dp"
             android:textColor="@color/grey2"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="40dp"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:backgroundTint="@color/orangishrednone"
+            android:backgroundTint="@color/orangishgrey"
             android:text="Pay now"
             android:textSize="18sp"
             android:textColor="@color/grey1"
