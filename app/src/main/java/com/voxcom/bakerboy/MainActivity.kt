@@ -33,6 +33,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cartButton: ImageButton
     private val items = mutableListOf<BakeryItem>()
 
+    private val itemPrices = mapOf(
+        "muffin" to 29,
+        "cupcake" to 25,
+        "donut" to 19,
+        "cinnamonroll" to 35,
+        "bananabread" to 39,
+        "macaron" to 49,
+        "pastry" to 45,
+        "redvelvet" to 55,
+        "cheesecake" to 59
+    )
+
     val itemKeys = listOf( "muffin", "cupcake", "donut", "cinnamonroll","bananabread", "macaron", "pastry", "redvelvet", "cheesecake")
 
 
@@ -59,7 +71,8 @@ class MainActivity : AppCompatActivity() {
             val data = getSharedPreferences("live_data", MODE_PRIVATE)
             val selectedItems = itemKeys.mapNotNull { key ->
                 val count = data.getInt(key, 0)
-                if (count > 0) ItemData(key, count) else null
+                val price = itemPrices[key] ?: 0
+                if (count > 0) ItemData(key, count, price) else null
             }
 
             val intent = Intent(this, CartActivity::class.java)
