@@ -15,7 +15,8 @@ import java.io.Serializable
 
 data class ItemData(
     val name: String,
-    val count: Int
+    val count: Int,
+    val price: Int
 ) : Serializable
 data class BakeryItem(
     val name: String,
