@@ -2,6 +2,7 @@ package com.voxcom.bakerboy
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class CartActivity : AppCompatActivity() {
+    lateinit var backButton: ImageButton
     lateinit var amountTotal: TextView
     lateinit var payNow: Button
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,8 @@ class CartActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        backButton = findViewById(R.id.backButton)
+
         amountTotal =findViewById(R.id.amount_total)
         payNow = findViewById(R.id.paybutton)
 
@@ -37,6 +41,9 @@ class CartActivity : AppCompatActivity() {
 
         if(totalPrice>0){
             payNow.isEnabled = true
+        }
+        backButton.setOnClickListener {
+            finish()
         }
     }
 }

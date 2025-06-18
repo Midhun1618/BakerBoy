@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var cartCounter: TextView
     private lateinit var cartButton: ImageButton
+    private lateinit var notificationButton: ImageButton
     private val items = mutableListOf<BakeryItem>()
 
     private val itemPrices = mapOf(
@@ -61,11 +62,17 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("live_data", MODE_PRIVATE)
         cartCounter = findViewById(R.id.cartCounter)
         cartButton = findViewById(R.id.cart_button)
+        notificationButton = findViewById(R.id.notificationButton)
 
         setupItems()
         updateAllCounters()
         setupClickListeners()
         counterClickListeners()
+
+        notificationButton.setOnClickListener{
+            val intent = Intent(this, InboxActivity::class.java)
+            startActivity(intent)
+        }
 
         cartButton.setOnClickListener {
             val data = getSharedPreferences("live_data", MODE_PRIVATE)
