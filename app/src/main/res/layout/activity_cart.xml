@@ -54,10 +54,11 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:backgroundTint="@color/orangishgrey"
+            android:id="@+id/paybutton"
+            android:backgroundTint="@color/orangishred"
             android:text="Pay now"
             android:textSize="18sp"
-            android:textColor="@color/grey1"
+            android:textColor="@color/white"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
 </LinearLayout>
