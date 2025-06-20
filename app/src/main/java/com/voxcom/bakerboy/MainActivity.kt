@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cartCounter: TextView
     private lateinit var cartButton: ImageButton
     private lateinit var notificationButton: ImageButton
+    private lateinit var profileButton: ImageButton
     private val items = mutableListOf<BakeryItem>()
 
     private val itemPrices = mapOf(
@@ -63,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         cartCounter = findViewById(R.id.cartCounter)
         cartButton = findViewById(R.id.cart_button)
         notificationButton = findViewById(R.id.notificationButton)
+        profileButton = findViewById(R.id.profileButton)
 
         setupItems()
         updateAllCounters()
@@ -71,6 +73,10 @@ class MainActivity : AppCompatActivity() {
 
         notificationButton.setOnClickListener{
             val intent = Intent(this, InboxActivity::class.java)
+            startActivity(intent)
+        }
+        profileButton.setOnClickListener{
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
 
