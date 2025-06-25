@@ -27,5 +27,6 @@ class CartAdapter(private val itemList: List<ItemData>) :
         holder.countText.text = "Qty: ${item.count}"
     }
 
+
     override fun getItemCount(): Int = itemList.size
 }
