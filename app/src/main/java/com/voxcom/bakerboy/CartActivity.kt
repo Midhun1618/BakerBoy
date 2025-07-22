@@ -1,5 +1,6 @@
 package com.voxcom.bakerboy
 
+import android.content.ActivityNotFoundException
 import android.net.Uri
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,7 +42,7 @@ class CartActivity : AppCompatActivity() {
 
         amountTotal.text = "₹$totalPrice"
         payNow.isEnabled = false
-
+ 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = CartAdapter(itemList)
@@ -53,32 +55,31 @@ class CartActivity : AppCompatActivity() {
         }
         payNow.setOnClickListener {
             val amount = itemList.sumOf { it.count * it.price }.toString()
-            val upiId = "midhumidhun342-2@okicic"
-            val name = "Midhun"
-            val note = "BakerBoy Order Payment"
-
-            payUsingUpi(amount, upiId, name, note)
+            makeGooglePayPayment(amount)
         }
     }
-    private fun payUsingUpi(amount: String, upiId: String, name: String, note: String) {
-        val uri = Uri.parse("upi://pay").buildUpon()
-            .appendQueryParameter("pa", upiId)
-            .appendQueryParameter("pn", name)
-            .appendQueryParameter("tn", note)
-            .appendQueryParameter("am", amount)
-            .appendQueryParameter("cu", "INR")
-            .build()
 
-        val upiPayIntent = Intent(Intent.ACTION_VIEW)
-        upiPayIntent.data = uri
+    private fun makeGooglePayPayment(amount : String) {
+        val upiId = "midhumidhun342-2@okicici"  // Replace with actual UPI ID
+        val name = "Midhun"  // Replace with the recipient name
+        val amount = amount  // Set the payment amount
+        val currency = "INR"
+        val transactionNote = "BakerBoy Order Payment"
+        val transactionId = "TXN" + System.currentTimeMillis()  // Unique transaction ID
 
-        upiPayIntent.setPackage("com.google.android.apps.nbu.paisa.user")
+        val uri = Uri.parse(
+            "upi://pay?pa=$upiId&pn=$name&mc=&tid=$transactionId&tr=$transactionId&tn=$transactionNote&am=$amount&cu=$currency"
+        )
 
-        if (upiPayIntent.resolveActivity(packageManager) != null) {
-            startActivityForResult(upiPayIntent, UPI_PAYMENT_REQUEST_CODE)
-        } else {
-            Toast.makeText(this, "Google Pay not found. Please install it.", Toast.LENGTH_SHORT).show()
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        intent.setPackage("com.google.android.apps.nbu.paisa.user")  // Google Pay package name
+
+        try {
+            startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(this, "Google Pay not installed", Toast.LENGTH_SHORT).show()
         }
     }
+
 
 }
