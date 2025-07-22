@@ -13,6 +13,8 @@ class CartAdapter(private val itemList: List<ItemData>) :
     class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameText: TextView = itemView.findViewById(R.id.productName)
         val countText: TextView = itemView.findViewById(R.id.productQuantity)
+        val priceText: TextView = itemView.findViewById(R.id.productPrice)
+        val image: ImageView = itemView.findViewById(R.id.productImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
@@ -25,6 +27,7 @@ class CartAdapter(private val itemList: List<ItemData>) :
         val item = itemList[position]
         holder.nameText.text = item.name.capitalize()
         holder.countText.text = "Qty: ${item.count}"
+        holder.priceText.text = "₹${item.price*item.count}"
     }
 
 

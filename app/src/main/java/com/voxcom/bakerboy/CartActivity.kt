@@ -60,20 +60,19 @@ class CartActivity : AppCompatActivity() {
     }
 
     private fun makeGooglePayPayment(amount : String) {
-        val upiId = "midhumidhun342-2@okicici"  // Replace with actual UPI ID
-        val name = "Midhun"  // Replace with the recipient name
-        val amount = amount  // Set the payment amount
+        val upiId = "midhumidhun342-2@okicici"
+        val name = "Midhun"
+        val amount = amount
         val currency = "INR"
         val transactionNote = "BakerBoy Order Payment"
-        val transactionId = "TXN" + System.currentTimeMillis()  // Unique transaction ID
+        val transactionId = "TXN" + System.currentTimeMillis()
 
         val uri = Uri.parse(
             "upi://pay?pa=$upiId&pn=$name&mc=&tid=$transactionId&tr=$transactionId&tn=$transactionNote&am=$amount&cu=$currency"
         )
 
         val intent = Intent(Intent.ACTION_VIEW, uri)
-        intent.setPackage("com.google.android.apps.nbu.paisa.user")  // Google Pay package name
-
+        intent.setPackage("com.google.android.apps.nbu.paisa.user")
         try {
             startActivity(intent)
         } catch (e: ActivityNotFoundException) {
